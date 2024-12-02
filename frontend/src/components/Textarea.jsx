@@ -65,7 +65,7 @@ const Textarea = () => {
       <div className="space-x-4 py-5">
         <button
           className={`p-2 mt-2 transition-colors duration-300 ${
-            !byratio
+            byratio
               ? "bg-black text-white"
               : "bg-blue-500 text-white hover:bg-black"
           }`}
@@ -75,7 +75,7 @@ const Textarea = () => {
         </button>
         <button
           className={`p-2 mt-2 transition-colors duration-300 ${
-            byratio
+            !byratio
               ? "bg-black text-white"
               : "bg-blue-500 text-white hover:bg-black"
           }`}
