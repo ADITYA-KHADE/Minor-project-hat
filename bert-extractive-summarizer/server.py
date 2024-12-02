@@ -53,7 +53,7 @@ class Parser(object):
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    return 'Hello, World! rishi'
+    return 'Hello, World!'
 
 @app.route('/summarize_by_ratio', methods=['POST'])
 def convert_raw_text_by_ratio():

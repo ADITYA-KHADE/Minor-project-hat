@@ -1,0 +1,47 @@
+What is clustering, and why is it used in summarization?
+How does the K-Means algorithm work?
+What are centroids, and why are they representative of clusters?
+How does BERT-based extractive summarization differ from older methods (e.g., TextRank)?
+How are sentences selected for summarization using clustering?
+What are dynamic summarizations, and how do they work?
+How can coreferences be resolved programmatically (e.g., spaCy, NLTK)?
+Why Use BERT?
+Comparison of extractive summarization tools (e.g., TextRank vs. BERT).
+Steps in building an extractive summarizer pipeline.
+What is coreference resolution, and why is it important in summarization?
+How do you preprocess text for summarization?
+Python libraries for NLP (e.g., spaCy, NLTK).
+NLTK and spaCy for preprocessing.
+Pipeline:
+   Input: Provide a text document or lecture transcript.
+   Preprocess: Tokenize sentences, clean up noise.
+   Embed: Use BERT to convert sentences into vectors.
+   Cluster: Group sentences into K clusters using K-Means.
+   Summarize: Select the centroid sentence from each cluster.
+
+
+What is the difference between abstractive and extractive summarization? (important)
+What are sentence embeddings, and how do they represent sentences numerically?
+How does BERT-based extractive summarization differ from older methods (e.g., TextRank)
+
+-----------------------------------------------------------------------
+1. Concept of Extractive Summarization
+2. Role of BERT
+3. Text Preprocessing
+Tokenization
+Cleaning
+4. Sentence Embedding
+
+     a] Using BERT - Each sentence is converted into a numerical representation (vector) using BERT's embedding layers. These vectors encode the meaning and context of the sentences.
+
+     b] Embedding Format - Results in an N x E matrix, where N is the number of sentences and E is the embedding dimension.
+
+5. Clustering Sentences
+
+     a] Clustering Algorithm - Use K-Means clustering to group sentence embeddings into clusters based on similarity. Each cluster represents a collection of semantically related sentences.
+
+     b] Centroid Selection - From each cluster, the sentence closest to the cluster centroid is chosen as the most representative.
+
+     c] Dynamic Summarization - The user can specify the number of sentences (K) for the summary, enabling flexible outputs.
+
+6. Coreference Resolution
