@@ -21,18 +21,15 @@ const Textarea = () => {
       ? `http://127.0.0.1:8080/summarize_by_ratio?ratio=${ratio}&min_length=${min_length}&max_length=${max_length}`
       : `http://127.0.0.1:8080/summarize_by_sentence?num_sentences=${num_sentences}&min_length=${min_length}&max_length=${max_length}`;
 
-    const body = byratio ? { data: text } : { data: text };
-
-    // console.log("Request body: ", body);
     console.log({ ratio, num_sentences, min_length, max_length });
 
     try {
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "text/plain",
         },
-        body: JSON.stringify(body),
+        body: text,
       });
 
       if (!response.ok) {
@@ -42,16 +39,10 @@ const Textarea = () => {
       const data = await response.json();
       console.log(data);
 
-      let extractedData = null;
-      if (data.summary) {
-        extractedData = data.summary.split('"data":"')[1]?.split('"}')[0];
-      }
-
       const summaryData = data.summary;
-      console.log(extractedData);
       console.log(summaryData);
 
-      setResult(extractedData ? extractedData : summaryData);
+      setResult(summaryData);
     } catch (error) {
       console.error("Failed to summarize the text:", error);
       setResult(`Failed to summarize the text: ${error.message}`);
